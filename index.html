@@ -12,7 +12,8 @@
 
     function gestorEventos(){
 
-      var img = document.getElementById("image");
+      //ejercicio 1
+      let img = document.getElementById("image");
       img.addEventListener("click", function(){
 
         alert("Has hecho click sobre la imagen!");
@@ -20,8 +21,40 @@
       });
 
 
-      var usuario= document-getElementById("user");
-      
+      //ejercicio 2
+      let usuario= document.getElementById("user");
+      let contraseña = document.getElementById("pass");
+
+      usuario.onblur= function(event){
+
+        miCampo= event.target;
+
+        if(miCampo.value==""){
+
+            miCampo.value="tu@email";
+
+        }
+
+      }
+
+      usuario.onfocus= function(event){
+
+        miCampo=event.target;
+
+        if(miCampo.value=="tu@email"){
+
+          miCampo.value="";
+
+        }
+
+      }
+
+    }
+
+    function submitForm(){
+
+      alert("Formulario enviado correctamente");
+      document.getElementById("form").submit();
 
     }
 
@@ -53,10 +86,10 @@
     </div>
     </div>
   <div id="login"><form id="form" method="post" action="/login">
-  Username: <input type="text" name="username" size="15" id="user" /><br />
+  Username: <input type="text" name="username" size="15" id="user" value="tu@email" /><br />
   <br />Password: <input type="password" name="passwort" id="pass" size="15" /><br />
   <div align="center">
-  <br /><input type="submit" value="Login" />
+  <br /><input type="submit" onclick="submitForm()" value="Login" />
   </div>
 </form>
 <h3>Join All the recipes </h3><p>In the news for you</p>
