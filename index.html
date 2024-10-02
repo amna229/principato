@@ -49,8 +49,21 @@
 
       }
 
+
+      //ejercicio 3
+      let combo = document.getElementById("combobox");
+      combo.addEventListener("change", function(event){
+
+        seleccion= event.target.value;
+        console.log("el usuario a elegido del combobox de las recetas:", seleccion);
+
+
+      });
+
+
     }
 
+    //ejercicio 2
     function submitForm(){
 
       document.getElementById("form").submit();
@@ -84,7 +97,7 @@
      <h3>Last Recipies</h3>
     </div>
     </div>
-  <div id="login"><form id="form" method="post" action="/login">
+  <div id="login"><form id="form" method="post" action="">
   Username: <input type="text" name="username" size="15" id="user" value="tu@email" /><br />
   <br />Password: <input type="password" name="passwort" id="pass" size="15" /><br />
   <div align="center">
