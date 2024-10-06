@@ -17,6 +17,7 @@
       img.addEventListener("click", function(){
 
         alert("Has hecho click sobre la imagen!");
+        clearInterval(myInt);
 
       });
 
@@ -61,26 +62,66 @@
       });
 
 
+      //ejercicio 5
+    const images=[
+
+      "images/heade_ft.jpg",
+      "images/fresas.jpg",
+      "images/limon.jpg",
+      "images/mandarinas.jpg",
+      "images/manzanas.jpg",
+      "images/melon.jpg",
+      "images/sesamo.jpg"
+
+    ];
+
+    let myInt= setInterval(carrusel, 3000);
+    let i=0;
+
+
+    function carrusel(){
+
+      img.src=images[i];
+
+      i++;
+
+      if(i>=images.length){
+
+        i=0;
+
+      }
+      
+
+    }
+
     }
 
     //ejercicio 2 + 4
-    function submitForm(){
+    function submitForm(event){
 
-      document.getElementById("form").submit();
+      //event.preventDefault();
+
+      document.getElementById("form").onsubmit;
+      
       console.log("el usuario ha iniciado sesión");
 
     }
 
 
 
+
+
   </script>
+
 
 
 </head>
 <body>
 <div class="container">
   <header>
-    <div id="logo"><a href="#"><img src="images/logo.png" alt="your logo here" border="0" class="imagedropshadow" /></a></div>
+    <div id="logo"><a href="#">
+      <img src="images/logo.png" alt="your logo here" border="0" class="imagedropshadow" />
+    </a></div>
     
     <div class="social"><a href="#"><img src="images/facebook.png" alt="Become a fan" width="24" height="24" border="0" class="imagedropshadow" /></a><a href="#"><img src="images/twitter.png" alt="Follow on Twitter" width="24" height="24" border="0" class="imagedropshadow" /></a><a href="#"><img src="images/myspace.png" alt="Myspace" width="24" height="24" border="0" class="imagedropshadow" /></a><a href="#"><img src="images/digg.png" alt="Digg" width="24" height="24" border="0" class="imagedropshadow" /></a></div>
     <h2>Italy Cooking</h2> <nav>
@@ -92,12 +133,14 @@
       <div class="navbutton"><a href="#">Home Page </a></div>           
     </nav> 
       
-    <div class="photo" id="image">
+    <img class="photo" src="images/header_bg.jpg" id="image"/>
+
     <div class="content">
      </nav> 
      <h3>Last Recipies</h3>
     </div>
-    </div>
+    <!--</div> -->
+    
   <div id="login"><form id="form" method="post" action="/index.html">
   Username: <input type="text" name="username" size="15" id="user" value="tu@email" /><br />
   <br />Password: <input type="password" name="passwort" id="pass" size="15" /><br />
